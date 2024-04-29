@@ -1,4 +1,6 @@
 Weight Tracker App README
+
+
 Introduction
 The Weight Tracker application was created to assist individuals in monitoring their weight and advancements towards achieving their fitness objectives. The primary goal of the app is to cater to users requirement, for an user friendly tool for monitoring weight fluctuations over time thereby aiding in the management of their health and fitness journey.
 
