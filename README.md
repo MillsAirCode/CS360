@@ -1,55 +1,69 @@
-Weight Tracker Android App
+# Weight Tracker Android App
+
 This is a simple Android application built with Java in Android Studio that allows users to register, log in, track their weight over time, and visualize their progress in a chart. The app uses SQLite for data storage and includes basic permission handling.
 
-Features
-User Authentication: Register and log in with a username and password (minimum 6 characters).
-Weight Tracking: Add, update, delete, and view weight entries with dates.
-Data Persistence: Stores user data and weight entries in an SQLite database.
-Data Display: Shows all weight entries in a list view.
-Chart Visualization: Displays weight data in a WebView using a local HTML chart (loaded from assets).
-Permission Handling: Requests SMS permission (demonstrates runtime permissions, though SMS functionality is placeholder).
-Key Components
-DatabaseHelper.java: Manages SQLite database creation and operations (users and weight entries tables).
-LoginActivity.java: Handles user login and registration with SharedPreferences for session management.
-MainActivity.java: Main screen with navigation to login, data display, chart, and permission request activities.
-DataDisplayActivity.java: Allows users to input and view weight entries.
-ChartActivity.java: Renders a chart using a WebView and JavaScript, pulling data from the database.
-PermissionRequestActivity.java: Demonstrates requesting SMS permission (placeholder functionality).
-WeightEntry.java: Model class for weight entry data.
-Database Schema
-Users Table: Stores id (auto-increment), username (unique), and password.
-Weight Entries Table: Stores id (auto-increment), date, weight, and user_id (foreign key to Users).
-Build Configuration
-The app uses a Gradle build configuration written in Kotlin Script (build.gradle.kts). Key settings include:
+## Features
 
-Namespace: com.example.androidstudiointro
-SDK Versions:
-Compile SDK: 34
-Minimum SDK: 28
-Target SDK: 34
-Version: 1.0 (versionCode: 1)
-Dependencies:
-AndroidX libraries: appcompat, material, activity, constraintlayout, recyclerview
-Gson: com.google.code.gson:gson:2.10.1
-Testing: junit, ext.junit, espresso.core
-Java Compatibility: Java 8
-Build Types: Release build with minification disabled and default ProGuard rules.
-See app/build.gradle.kts for the full configuration.
+- **User Authentication**: Register and log in with a username and password (minimum 6 characters).
+- **Weight Tracking**: Add, update, delete, and view weight entries with dates.
+- **Data Persistence**: Stores user data and weight entries in an SQLite database.
+- **Data Display**: Shows all weight entries in a list view.
+- **Chart Visualization**: Displays weight data in a WebView using a local HTML chart (loaded from assets).
+- **Permission Handling**: Requests SMS permission (demonstrates runtime permissions, though SMS functionality is placeholder).
 
-Usage
-Launch the app and navigate to the login screen from the main activity.
-Register a new account or log in with existing credentials.
-Add weight entries with dates in the data display screen.
-View all entries in a list or visualize them in the chart activity.
-Optionally, test SMS permission requesting (no actual SMS sent).
-Requirements
-Android Studio
-Minimum API level 28 (Android 9.0 Pie)
-Local chart.html file in the assets folder for chart rendering
-Notes
-Passwords are stored in plain text (for simplicity; consider encryption in production).
-The chart relies on a JavaScript function (drawChart) in chart.html, which is not included here.
-SMS functionality is a placeholder and requires further implementation.
+## Key Components
+
+- **`DatabaseHelper.java`**: Manages SQLite database creation and operations (users and weight entries tables).
+- **`LoginActivity.java`**: Handles user login and registration with SharedPreferences for session management.
+- **`MainActivity.java`**: Main screen with navigation to login, data display, chart, and permission request activities.
+- **`DataDisplayActivity.java`**: Allows users to input and view weight entries.
+- **`ChartActivity.java`**: Renders a chart using a WebView and JavaScript, pulling data from the database.
+- **`PermissionRequestActivity.java`**: Demonstrates requesting SMS permission (placeholder functionality).
+- **`WeightEntry.java`**: Model class for weight entry data.
+
+## Database Schema
+
+- **Users Table**: Stores `id` (auto-increment), `username` (unique), and `password`.
+- **Weight Entries Table**: Stores `id` (auto-increment), `date`, `weight`, and `user_id` (foreign key to Users).
+
+## Build Configuration
+
+The app uses a Gradle build configuration written in Kotlin Script (`build.gradle.kts`). Key settings include:
+
+- **Namespace**: `com.example.androidstudiointro`
+- **SDK Versions**: 
+  - Compile SDK: 34
+  - Minimum SDK: 28
+  - Target SDK: 34
+- **Version**: 1.0 (versionCode: 1)
+- **Dependencies**:
+  - AndroidX libraries: `appcompat`, `material`, `activity`, `constraintlayout`, `recyclerview`
+  - Gson: `com.google.code.gson:gson:2.10.1`
+  - Testing: `junit`, `ext.junit`, `espresso.core`
+- **Java Compatibility**: Java 8
+- **Build Types**: Release build with minification disabled and default ProGuard rules.
+
+See `app/build.gradle.kts` for the full configuration.
+
+## Usage
+
+1. Launch the app and navigate to the login screen from the main activity.
+2. Register a new account or log in with existing credentials.
+3. Add weight entries with dates in the data display screen.
+4. View all entries in a list or visualize them in the chart activity.
+5. Optionally, test SMS permission requesting (no actual SMS sent).
+
+## Requirements
+
+- Android Studio
+- Minimum API level 28 (Android 9.0 Pie)
+- Local `chart.html` file in the `assets` folder for chart rendering
+
+## Notes
+
+- Passwords are stored in plain text (for simplicity; consider encryption in production).
+- The chart relies on a JavaScript function (`drawChart`) in `chart.html`, which is not included here.
+- SMS functionality is a placeholder and requires further implementation.
 
 
 Introduction
